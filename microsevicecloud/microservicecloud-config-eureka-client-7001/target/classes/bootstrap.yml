@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      name: microservicecloud-eureka-7001 # 需要从github上读取的资源名字，注意没有后缀.yml
+      profile: dev #  本此访问的配置
+      label: master #  访问的分支
+      uri: http://config3344.com:3344  #本微服务启动后先去3344号服务，通过SpringCloudConfig获取GitHub地址

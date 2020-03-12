@@ -5,8 +5,8 @@ spring:
     config:
       server:
         git:
-#          uri: https://github.com/txlovetue/microservicecloud-config.git
-          uri: git@github.com:txlovetue/microservicecloud-config.git  # GitHub远程仓库地址
+          uri: https://github.com/txlovetue/microservicecloud-config.git
+#          uri: git@github.com:txlovetue/microservicecloud-config.git  # GitHub远程仓库地址,访问不到数据，报错：Cannot clone or checkout repository
 server:
   port: 3344
 
