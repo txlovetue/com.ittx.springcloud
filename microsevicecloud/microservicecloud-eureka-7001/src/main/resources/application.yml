@@ -1,0 +1,14 @@
+server:
+  port: 7001
+
+eureka:
+  instance:
+    # 修改hosts文件，做IP映射127.0.0.1       eureka7001.com  127.0.0.1       eureka7002.com  127.0.0.1       eureka7003.com
+    hostname: eureka7001.com
+  #    hostname: microservicecloud-eureka-7001
+  client:
+    register-with-eureka: false  #不让eureka服务模块注册自己
+    fetch-registry: false        #表明自己是注册中心，任务不包含发现服务
+    service-url:
+#      单机情况：defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/  #设置与Eureka Server交互的地址 查询服务和注册服务都需要依赖这个地址
+      defaultZone: http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/

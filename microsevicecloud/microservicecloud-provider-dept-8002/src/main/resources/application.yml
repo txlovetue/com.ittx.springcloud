@@ -1,0 +1,56 @@
+server:
+  port: 8002
+
+
+eureka:
+  instance:
+    instance-id: deptService-provider-8002
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+spring:
+  application:
+    name: microservicecloud-provider-dept                                   # 当前服务名称，集群中这个暴露服务的名称必须一致
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cloudDB02?useUnicode=true&charaterEncoding=utf8&serverTimezone=UTC&verifyServerCertificate=false&useSSL=false
+    username: root
+    password: 52571314
+    type: com.alibaba.druid.pool.DruidDataSource
+    dbcp2:
+      min-idle: 5                                                           # 数据库连接池最小维持连接数
+      initial-size: 5                                                       # 初始化连接数
+      max-wait-millis: 200                                                  # 等待连接获取最大超时时间
+      max-total: 10                                                         # 最大连接数
+
+
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    #   配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+    #    filters: stat,wall,log4j
+    maxPoolPreparedStatementPerConnectionSize: 20
+    useGlobalDataSourceStat: true
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+
+
+info:
+  app.name: com.ittx.microservicecloud
+  company.name: www.ittx.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+
+mybatis:
+#  mapper-locations:
+#    - classpath:mybatis/mapper/*.xml  # 使用注解开发可以省略
+  type-aliases-package: com.ittx.springcloud.entities
+#  config-location: classpath:mybatis/mybatis.cf.xml  使用@Mepper注解开发可以省略

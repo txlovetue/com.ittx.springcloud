@@ -1,0 +1,18 @@
+server:
+  port: 80
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: deptConsumer
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+    register-with-eureka: false
+#      defaultZone: http://localhost:7001/eureka  # 单机情况
+
+info:
+  app.name: deptConsumer
+  company.name: www.ittx.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$

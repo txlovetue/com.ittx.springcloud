@@ -1,0 +1,14 @@
+# Project exclude paths
+/microsevicecloud/microservicecloud-api/target/
+/microsevicecloud/microservicecloud-config-3344/target/
+/microsevicecloud/microservicecloud-consumer-dept-80/target/
+/microsevicecloud/microservicecloud-consumer-dept-feign/target/
+/microsevicecloud/microservicecloud-consumer-hystrix-dashboard/target/
+/microsevicecloud/microservicecloud-eureka-7001/target/
+/microsevicecloud/microservicecloud-eureka-7002/target/
+/microsevicecloud/microservicecloud-eureka-7003/target/
+/microsevicecloud/microservicecloud-provider-dept-8001/target/
+/microsevicecloud/microservicecloud-provider-dept-8002/target/
+/microsevicecloud/microservicecloud-provider-dept-8003/target/
+/microsevicecloud/microservicecloud-provider-dept-hystrix-8001/target/
+/microsevicecloud/microservicecloud-zuul-gateway-9527/target/

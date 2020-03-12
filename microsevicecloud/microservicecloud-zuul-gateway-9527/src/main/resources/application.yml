@@ -1,0 +1,29 @@
+server:
+  port: 9527
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: gateway-zuul-9527   # Hystrix相关
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+#      defaultZone: http://localhost:7001/eureka  # 单机情况
+
+info:
+  app.name: com.ittx.microservicecloud
+  company.name: www.ittx.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+spring:
+  application:
+    name: microservicecloud-gateway-zuul
+zuul:
+  routes:
+    mydept.serviceId: microservicecloud-provider-dept
+    mydept.path: /mydept/**
+  ignored-services: microservicecloud-provider-dept
+  prefix: /
+  ittx
+#  ignored-services: *   # 使用*可以忽略多个
+
